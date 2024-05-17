@@ -36,31 +36,33 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.teal,
             pinned: true,
             floating: false,
-            title: Row(children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  margin: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                  child: TextField(
-                    controller: _findProduct,
-                    decoration: InputDecoration(
-                      hintText: 'ShopBee Search',
-                      contentPadding: EdgeInsets.all(10),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+            title: Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: TextField(
+                  controller: _findProduct,
+                  decoration: InputDecoration(
+                    hintText: 'ShopBee Search',
+                    suffixIcon: GestureDetector(
+                      onTap: (){
+                        print('object');
+                      },
+                      child: Container(
+                        child: const Icon(Icons.search,
+                            color: Color(0xFFFF7F50), size: 35),
                       ),
+                    ),
+                    contentPadding: EdgeInsets.all(10),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
                   ),
                 ),
               ),
-              Container(
-                child: const Icon(Icons.search,
-                    color: Color(0xFFFF7F50), size: 35),
-              ),
-            ]),
+            ),
           ),
           SliverList(
             delegate: SliverChildListDelegate([

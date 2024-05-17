@@ -84,8 +84,7 @@ class LoginPage extends StatelessWidget {
                   checkLogin(_textEmail.text, _textPW.text, context);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.lightBlue, // background color
-                  onPrimary: Colors.white, // text color
+                  foregroundColor: Colors.white, backgroundColor: Colors.lightBlue, // text color
                   padding: const EdgeInsets.symmetric(
                       horizontal: 30), // button padding
                   shape: RoundedRectangleBorder(
